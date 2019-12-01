@@ -1,16 +1,16 @@
-html,body{
+body{
     font-family: 'Nunito', sans-serif;
     min-height: 180px;
-    width: 384px;
+    width: 500px;
     /* margin: 0;
 	padding: 0; */
-	
 	overflow: hidden;
+	border: 1px solid black;
 }
 .heading{
     padding:0.2rem;
-    background-image: linear-gradient(to right, #FED2AF , #FF6C6C);
-    align-items: center;
+	background-image: linear-gradient(to right, #FED2AF , #FF6C6C);
+	
 }
 
 
@@ -65,6 +65,12 @@ html,body{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	text-align: center;
     vertical-align: middle;display: inline-block;
+}
+
+.inputs{
+	text-align: center;
+	margin-top: 2rem;
+	margin: 2rem 0.5rem;
 }
 
 
