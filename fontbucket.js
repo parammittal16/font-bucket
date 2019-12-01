@@ -1,7 +1,7 @@
 let allFonts = [];
 window.onload = getFonts();
 
-function getFonts(){
+ function getFonts(){
     chrome.storage.sync.get(['allFonts'],function (result){
        console.log(result['allFonts']);
        allFonts = result['allFonts'];
