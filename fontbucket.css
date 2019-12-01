@@ -1,0 +1,76 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    min-height: 180px;
+    width: 500px;
+    /* margin: 0;
+	padding: 0; */
+	overflow: hidden;
+	border: 1px solid black;
+}
+.heading{
+    padding:0.2rem;
+	background-image: linear-gradient(to right, #FED2AF , #FF6C6C);
+	
+}
+
+
+.icon{
+    max-height: 50px;
+}
+
+.topic{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem !important;
+    vertical-align: middle;
+}
+
+.add-font{
+	border: 1px solid #ffffff !important;
+    box-shadow:6px 6px 4px rgba(156, 156, 156, 0.103);
+	border-left: 3px solid #FF6C6C !important;
+	/* display: block; */
+    width: 60%;
+    /* height: calc(1.5em + .75rem + 2px); */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.add-button{
+	background-color: #FF6C6C;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    font-size: .813rem;
+    padding: .4rem 2rem!important;
+    letter-spacing: .125rem;
+	/* box-shadow: 2px 2px 5px 0 rgba(0,0,0,.2);
+	 */
+	 box-shadow:6px 6px 8px rgba(255, 108, 108, 0.253) ;
+
+    position: relative;
+    overflow: hidden;
+	margin: .6rem;
+	border: 1px solid transparent;
+	line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	text-align: center;
+    vertical-align: middle;display: inline-block;
+}
+
+.inputs{
+	text-align: center;
+	margin-top: 2rem;
+	margin: 2rem 0.5rem;
+}
+
+
