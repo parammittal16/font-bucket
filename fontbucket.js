@@ -57,10 +57,10 @@ function setOptions() {
 function applyFont() {
     let selectedFont = document.getElementById('fonts').value;
     let link = document.createElement("link");
-    link.setAttribute("href", selectedFont);
-    link.setAttribute("rel", "stylesheet");
-    console.log(link);
+    link.setAttribute("href",selectedFont);
+    link.setAttribute("rel","stylesheet");
+    console.log(link)
     chrome.tabs.executeScript({
-        code: "document.head.createElement(${link})"
+        code: `document.getElementsByTagName("head")[0].appendChild(${link.nodeValue});`
     });
 }
