@@ -6,25 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Font Bucket</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontbucket.css">
 </head>
 
 <body>
-    <h3>
-        Font Bucket
-    </h3>
-    <span>
-        <input id="fontUrl" type="text">
-        <button id="addFontButton">Add</button>
-    </span>
-    <br>
-    <span>
-        <select name="drop" id="fonts">
-            <option>Please add a font</option>
-        </select>
-        <button>Apply</button>
-    </span>
-</body>
-<script src="fontbucket.js">
+    <div class='heading'>
+        <img src="icon-128.png" alt="logo" class="icon">
+        <span class="topic">Font Bucket</span>
 
-</script>
+    </div>
+
+    <div class="inputs">
+    <div>
+        <input type="text" id="fontUrl" class="add-font" placeholder="Add your link here">
+        <button id="addFontButton" class="add-button">Add</button>
+
+    </div>
+    <br>
+    <div>
+        <select name="drop" id="fonts" class="add-font" style="width: 62%;">
+            <option disabled selected>Select your font</option>
+        </select>
+        <button id="applyFontButton" class="add-button">Apply</button>
+    </div>
+</div>
+</body>
+<script src="fontbucket.js"></script>
 </html>

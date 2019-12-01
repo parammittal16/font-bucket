@@ -11,7 +11,7 @@ function getFonts(){
 };
 
 document.getElementById("addFontButton").onclick = postFonts;
-// document.getElementById("applyFontButton").onclick = applyFont;
+document.getElementById("applyFontButton").onclick = applyFont;
 
 function postFonts() {
     let url = document.getElementById('fontUrl').value;
@@ -35,5 +35,16 @@ function setOptions() {
         let option = document.createElement("option");
         option.text = item;
         fontDropdown.add(option);
+    });
+}
+
+function applyFont() {
+    let selectedFont = document.getElementById('fonts').value;
+    let link = document.createElement("link");
+    link.setAttribute("href", selectedFont);
+    link.setAttribute("rel", "stylesheet");
+    console.log(link);
+    chrome.tabs.executeScript({
+        code: `document.head.appendChild(${link})`
     });
 }
