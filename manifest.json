@@ -6,14 +6,14 @@
     "version": "1.0.0",
     // "icons": { "128": "icon_128.png" },
     "browser_action": {
-      // "default_icon": "icon.png",
+      "default_icon": "icon.png",
       "default_popup": "fontbucket.html"
     },
     "background": {
       "scripts": ["fontbucket.js"],
       "persistent": false
     },
-    "permissions": ["activeTab", "storage"],
+    "permissions": [ "storage", "tabs", "activeTab", "<all_urls>"],
     "commands": {
       "_execute_browser_action": {
         "suggested_key": {
