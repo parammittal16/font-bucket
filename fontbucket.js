@@ -12,20 +12,45 @@ window.onload = getFonts();
 
 document.getElementById("addFontButton").onclick = postFonts;
 document.getElementById("applyFontButton").onclick = applyFont;
+document.getElementById("deletefont").onclick = deleteFont;
+document.getElementById("refresh").onclick = refresh;
+
+function refresh(){
+    chrome.tabs.executeScript({
+    code: `history.go(0)`
+});
+}
 
 function postFonts() {
     let url = document.getElementById('fontUrl').value;
     if(url.length !=0)
     {
-    let newList = allFonts;
-    newList.push(url);
-    console.log('2', newList);
-    chrome.storage.sync.set({'allFonts':newList}, function() {
-        console.log('Value is set to ' + newList);
-        getFonts();
-    });
-    document.getElementById("fontUrl").value="";
+        flag=0;
+        for(let i=0;i<allFonts.length;i++)
+        {
+            if(url==allFonts[i])
+            {
+                flag=1;break;
+            }
+            
+        }
+        if(!flag)
+        {
+            let newList = allFonts;
+            newList.push(url);
+            console.log('2', newList);
+            chrome.storage.sync.set({'allFonts':newList}, function() {
+                console.log('Value is set to ' + newList);
+                getFonts();
+            });
+            document.getElementById("fontUrl").value="";
+        
+        }
+        else{
+            document.getElementById("err").innerHTML="url already exists";
 
+        }
+    
     }
     else{
         document.getElementById("err").innerHTML="Please add a valid url";
@@ -64,6 +89,26 @@ function applyFont() {
     let fontNameFinal = fontName.replace(/\+/g, ' ');
     chrome.tabs.executeScript({
         code: `console.log(document.createElement("link").setAttribute("href", '${selectedFont}'));
-        document.body.style.fontFamily = '${fontNameFinal}, sans-serif'`
+        document.querySelectorAll('*').forEach(function(item){item.style.fontFamily = '${fontNameFinal}'});`
+
     });
+}
+function deleteFont(){
+    let url = document.getElementById('fonts').value;
+    console.log('1', url);
+    let newList = []
+    for(let i=0;i<allFonts.length;i++)
+    {
+        if(allFonts[i]!= url)
+        {
+            newList.push(allFonts[i]);
+            console.log(allFonts[i]);
+        }
+        
+    }
+    chrome.storage.sync.set({'allFonts':newList}, function() {
+        console.log('Value is set to ' + newList);
+        getFonts();
+    });
+
 }

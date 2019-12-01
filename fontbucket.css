@@ -90,4 +90,12 @@ body{
 	font-weight: bold;
 	text-decoration: none;
 }
-
+.color{
+	display: inline;
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	margin: 0 5px;
+	background-color: transparent;
+	border:none;
+}
