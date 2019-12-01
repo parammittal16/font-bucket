@@ -13,7 +13,9 @@
       "scripts": ["fontbucket.js"],
       "persistent": false
     },
-    "permissions": [ "storage", "tabs", "activeTab", "<all_urls>"],
+    "permissions": [ "storage", "tabs", "activeTab", "<all_urls>","background",
+      "http://*/*",
+      "https://*/*"],
     "commands": {
       "_execute_browser_action": {
         "suggested_key": {
