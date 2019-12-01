@@ -1,28 +1,35 @@
 body{
     font-family: 'Nunito', sans-serif;
     min-height: 180px;
-    width: 500px;
+    width: 430px;
     /* margin: 0;
 	padding: 0; */
 	overflow: hidden;
 	border: 1px solid black;
 }
 .heading{
-    padding:0.2rem;
 	background-image: linear-gradient(to right, #FED2AF , #FF6C6C);
-	
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
 }
 
 
 .icon{
-    max-height: 50px;
+	max-height: 40px;
 }
 
 .topic{
     font-size: 2rem;
-    color: white;
-    margin-bottom: 1rem !important;
-    vertical-align: middle;
+	color: white;
+	margin-left: 1rem;
+}
+
+.desc{
+	color: gray;
+	text-align: center;
+	margin: 0.5rem 2rem;
+	
 }
 
 .add-font{
@@ -52,10 +59,8 @@ body{
     font-size: .813rem;
     padding: .4rem 2rem!important;
     letter-spacing: .125rem;
-	/* box-shadow: 2px 2px 5px 0 rgba(0,0,0,.2);
-	 */
-	 box-shadow:6px 6px 8px rgba(255, 108, 108, 0.253) ;
-
+	cursor: pointer;
+	box-shadow:6px 6px 8px rgba(255, 108, 108, 0.253) ;
     position: relative;
     overflow: hidden;
 	margin: .6rem;
@@ -69,8 +74,20 @@ body{
 
 .inputs{
 	text-align: center;
-	margin-top: 2rem;
-	margin: 2rem 0.5rem;
+	margin: 2rem 0.5rem 0.5rem 0.5rem;
+	border-bottom: 1px rgb(197, 197, 197) solid;
+	padding-bottom: 2rem;
 }
 
+.dd{
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.si{
+	color: #3F95E9;
+	padding-top: 0.3rem;
+	font-weight: bold;
+	text-decoration: none;
+}
 

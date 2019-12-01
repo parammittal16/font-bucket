@@ -57,10 +57,13 @@ function setOptions() {
 function applyFont() {
     let selectedFont = document.getElementById('fonts').value;
     let link = document.createElement("link");
-    link.setAttribute("href",selectedFont);
-    link.setAttribute("rel","stylesheet");
-    console.log(link)
+    link.setAttribute("href", selectedFont);
+    link.setAttribute("rel", "stylesheet");
+    console.log(link);
+    let fontName = selectedFont.split('=')[1].split('&')[0];
+    let fontNameFinal = fontName.replace(/\+/g, ' ');
     chrome.tabs.executeScript({
-        code: `document.getElementsByTagName("head")[0].appendChild(${link.nodeValue});`
+        code: `console.log(document.createElement("link").setAttribute("href", '${selectedFont}'));
+        document.body.style.fontFamily = '${fontNameFinal}, sans-serif'`
     });
 }

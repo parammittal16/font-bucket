@@ -12,11 +12,13 @@
 
 <body>
     <div class='heading'>
-        <img src="icon-128.png" alt="logo" class="icon">
+        <img src="icon_128.png" alt="logo" class="icon">
         <span class="topic">Font Bucket</span>
 
     </div>
-
+    <div class="desc">
+        Amass your favourite fonts here, then appeal and test it on any website.&#128516;
+    </div>
     <div class="inputs">
     <div>
 
@@ -27,11 +29,16 @@
     </div>
     <br>
     <div>
-        <select name="drop" id="fonts" class="add-font" style="width: 62%;">    
+        <select name="drop" id="fonts" class="add-font" style="width: 95%;">    
             <option disabled selected>Select your font</option>
         </select>
-        <button id="applyFontButton" class="add-button">Apply</button>
+        <div><button id="deletefont" class="add-button" style="background-color:rgb(252,74,74);">Delete</button>
+            <button style="background-color:rgb(5,211,5)" id="applyFontButton" class="add-button">Apply</button></div>
+        <div style="color:red;text-align:left "> <span  id="err2"></span></div>
     </div>
+</div>
+<div class="dd">
+    Design and Developed by <br> <a href="http://silive.in/" target="__blank" class="si"><img src="silogo.png" alt=""> Software Incubator</a>
 </div>
 </body>
 <script src="fontbucket.js"></script>
