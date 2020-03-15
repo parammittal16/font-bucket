@@ -88,14 +88,29 @@ window.onload = function () {
         let fontName = selectedFont.split('=')[1].split('&')[0];
         let fontNameFinal = fontName.replace(/\+/g, ' ');
         console.log(fontNameFinal);
+        
         chrome.tabs.executeScript({
-            code: `console.log(document.createElement("link").setAttribute("href", '${selectedFont}'));
-            document.querySelectorAll('*').forEach(function(item){item.style.fontFamily = '${fontNameFinal}'});`
-        });
-        // chrome.tabs.executeScript({
-        //     code: `console.log('execute')`
+            code: `
+            var link = document.createElement("link");
+            link.href = "${selectedFont}";
+            link.rel = "stylesheet";
+            document.head.appendChild(link);
+            console.log(link);
+            var css = '* { font-family: ${fontNameFinal} !important }',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
 
-        // });
+            head.appendChild(style);
+
+            style.type = 'text/css';
+                if (style.styleSheet){
+                style.styleSheet.cssText = css;
+                } else {
+                style.appendChild(document.createTextNode(css));
+                }
+            `
+
+        });
     }
 
     function deleteFont() {
