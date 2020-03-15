@@ -16,7 +16,7 @@
     "permissions": [ "storage", "tabs", "activeTab", "<all_urls>","background",
       "http://*/*",
       "https://*/*",
-      "https://www.google.com/"],
+      "https://www.google.com/"],   
     "commands": {
       "_execute_browser_action": {
         "suggested_key": {
