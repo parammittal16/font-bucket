@@ -13,10 +13,7 @@
       "scripts": ["fontbucket.js"],
       "persistent": false
     },
-    "permissions": [ "storage", "tabs", "activeTab", "<all_urls>","background",
-      "http://*/*",
-      "https://*/*",
-      "https://www.google.com/"],   
+    "permissions": [ "storage", "tabs", "activeTab"],   
     "commands": {
       "_execute_browser_action": {
         "suggested_key": {
